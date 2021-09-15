@@ -42,8 +42,11 @@ public class GroupMembershipService {
     @GET
     @Path("/{groupId}")
     public Response getGroupUsers(@PathParam("groupId") long groupId) {
-        Set<User> members = groupService.getGroupMembers(groupId);
-        List<UserResponseDto> groupMembers = members.stream().map(UserResponseDto::fromUser).collect(Collectors.toList());
+        Group groupWithMembers = groupService.getGroupWithMembers(groupId);
+        List<UserResponseDto> groupMembers = groupWithMembers.getUsers().stream()
+                .map(UserResponseDto::fromUser)
+                .collect(Collectors.toList());
+
         return Response.ok().entity(groupMembers).build();
     }
 

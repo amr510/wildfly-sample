@@ -28,6 +28,7 @@ public class GroupService {
         List<GroupResponseDto> groupResponseDtos = groups.stream().map(GroupResponseDto::fromGroup).collect(Collectors.toList());
         return Response.ok().entity(groupResponseDtos).build();
     }
+
     @GET
     @Path("/{id}")
     public Response getGroup(@PathParam("id") long id) {
@@ -53,6 +54,13 @@ public class GroupService {
             group.setName(createGroupRequestDto.getName());
             service.update(group);
         }
-        return Response.ok().entity(group).build();
+        return Response.ok().entity(GroupResponseDto.fromGroup(group)).build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public Response deleteGroup(@PathParam("id") long id){
+        service.deleteById(id);
+        return Response.ok().build();
     }
 }

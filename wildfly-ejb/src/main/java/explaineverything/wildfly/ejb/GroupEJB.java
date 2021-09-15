@@ -2,16 +2,16 @@ package explaineverything.wildfly.ejb;
 
 import explaineverything.wildfly.model.Group;
 import explaineverything.wildfly.model.User;
-import org.hibernate.Hibernate;
-import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 @ApplicationScoped
 public class GroupEJB {
@@ -52,16 +52,28 @@ public class GroupEJB {
     public Group deleteGroupMember(long groupId, long userId) {
         Group group = em.find(Group.class, groupId);
         User user = em.find(User.class, userId);
-        group.removeUsers(user);
+        group.removeUser(user);
         return group;
     }
 
 
     @Transactional
-    public Set<User> getGroupMembers(long groupId) {
-        Group group = em.find(Group.class, groupId);
-        Hibernate.initialize(group.getUsers());
-        return group.getUsers();
+    public Group getGroupWithMembers(long groupId) {
+        EntityGraph<?> groupWithMembersGraph = em.getEntityGraph("groupWithMembersGraph");
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("javax.persistence.fetchgraph", groupWithMembersGraph);
+        Group group = em.find(Group.class, groupId, properties);
+        return group;
+    }
+
+    @Transactional
+    public boolean deleteById(long id){
+        Group group = em.find(Group.class, id);
+        if( group != null){
+            em.remove(group);
+            return true;
+        }
+        return false;
     }
 
 }

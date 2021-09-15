@@ -73,8 +73,8 @@ public class UserService {
 	@DELETE
 	@Path("/{id}")
 	public Response deleteUser(@PathParam("id") long id) {
-		User user = service.deleteById(id);
-		return Response.ok().entity(UserResponseDto.fromUser(user)).build();
+		service.deleteById(id);
+		return Response.ok().build();
 	}
 
 }
