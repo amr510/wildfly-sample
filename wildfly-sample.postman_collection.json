@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "319f6b9a-ebbd-4f12-97e1-10a91c42eb08",
+		"name": "wildfly-sampe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/users",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"user1\",\n    \"email\": \"email1@gmail.com\",\n    \"type\": \"STANDARD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/users/1",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/groups",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"group2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/groups/1",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/groups/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"groups",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/group-members",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"groupId\": 1,\n    \"userId\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/group-members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"group-members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/group-members",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"groupId\": 1,\n    \"userId\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/group-members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"group-members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/groups",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/group-members",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/group-members/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"group-members",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/groups",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"group2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/groups/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"groups",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/wildfly-rest/rest/users/1",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "aapasword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aa",
+							"type": "string"
+						},
+						{
+							"key": "realm",
+							"value": "ManagementRealm",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"user1\",\n    \"email\": \"email1@gmail.com\",\n    \"type\": \"STANDARD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wildfly-rest/rest/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wildfly-rest",
+						"rest",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
